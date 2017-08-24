@@ -135,7 +135,7 @@ namespace ASampleApp
 
             //            Task.Run(() => _tempImageSource = MyClass.getTheUrlFromBlob());
 
-            //SAMPLE THAT WORKS BUT NOT NEEDED
+            //BLOB STORAGE SAMPLE THAT WORKS BUT NOT NEEDED
             //_tempImageSource = BlobStorage.AzureBlobStorage.getTheUrlFromBlob();
 			//_tempImage.Source = ImageSource.FromUri(new Uri("https://asampleappfive.blob.core.windows.net/my9container/HelloWorld.png"));
 
@@ -158,6 +158,19 @@ namespace ASampleApp
 			//imgProf.Source = bitmapImage;
 
 			base.OnAppearing ();
+
+            if (_firstEntry.Text != null)
+            {
+                _firstEntry.Text = string.Empty;
+            }
+
+            if(_secondEntry.Text != null)
+            {
+                _secondEntry.Text = string.Empty;
+            }
+
+
+
 			//METHOD 1
 			//			_firstButton.Clicked += OnFirstButtonClicked;
 

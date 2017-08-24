@@ -34,13 +34,18 @@ namespace ASampleApp
 		private async void DeleteDogFromListAction(object obj)
 		{
 			Debug.WriteLine("DELETE DOG FROM LIST ACTION");
-
 			var myItem = obj as Dog;
-			_observableCollectionOfDogs.Remove(myItem);
+			Debug.WriteLine($"Removing dog {myItem}");
 
-			var myCosmosDog = DogConverter.ConvertToCosmosDog(myItem);
-
-			await CosmosDBService.DeleteCosmosDogAsync(myCosmosDog);
+			if(_observableCollectionOfDogs.Remove(myItem))
+			{
+				var myCosmosDog = DogConverter.ConvertToCosmosDog(myItem);
+				await CosmosDBService.DeleteCosmosDogAsync(myCosmosDog);
+			} 
+			else
+			{
+				Debug.WriteLine($"Dog not reomved from observable collection {myItem}");
+			}
 		}
 
 		public ObservableCollection<Dog> ObservableCollectionOfDogs
