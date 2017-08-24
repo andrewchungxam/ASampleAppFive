@@ -67,7 +67,8 @@ namespace ASampleApp
 
             var model = BindingContext as Dog;
 
-            dogImage.SetBinding(Image.SourceProperty, nameof(model.DogPictureURLBlob));
+			dogImage.SetBinding(Image.SourceProperty, nameof (model.DogPictureSource));
+            //dogImage.SetBinding(Image.SourceProperty, nameof(model.DogPictureURLBlob));
             myTextProperty.SetBinding(Label.TextProperty, nameof(model.Name));
             myDetailProperty.SetBinding(Label.TextProperty, nameof(model.FurColor) );
 

@@ -17,7 +17,9 @@ namespace ASampleApp.CosmosDB
 
 		//DBS - Collections - Documents
 		static readonly string DatabaseId = "Xamarin";
-	    static readonly string CollectionId = "ASampleAppFourDogListPhoto";
+	    //static readonly string CollectionId = "ASampleAppFourDogListPhoto";
+		static readonly string CollectionId = "ASampleAppFiveDogListPhoto";
+
 
 
 		//CLIENT
